@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linux Desktop Simulator Overlay - Demo</title>
+    <link rel="stylesheet" href="../terminal-kit/terminal-kit.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Segoe UI, Tahoma, Geneva, 'Verdana', sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            min-height: 100vh;
+            color: #fff;
+        }
+
+        .demo-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px 100px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-shadow: 0 0 20px rgba(0, 255, 0, 0.5);
+            color: #00ff00;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: #888;
+            margin-bottom: 40px;
+        }
+
+        .info-box {
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid #333;
+            border-radius: 10px;
+            padding: 30px;
+            margin-bottom: 30px;
+            text-align: left;
+        }
+
+        .info-box h2 {
+            color: #00ff00;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .info-box ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .info-box li {
+            padding: 8px 0;
+            border-bottom: 1px solid #222;
+            color: #aaa;
+        }
+
+        .info-box li:last-child {
+            border-bottom: none;
+        }
+
+        .info-box li strong {
+            color: #00cc00;
+        }
+
+        .demo-note {
+            background: rgba(0, 255, 0, 0.1);
+            border: 1px solid #00ff00;
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 30px;
+        }
+
+        .demo-note p {
+            color: #00ff00;
+            font-size: 1.1rem;
+        }
+
+        code {
+            background: #000;
+            padding: 2px 8px;
+            border-radius: 4px;
+            color: #00ff00;
+            font-family: 'Courier New', monospace;
+        }
+    </style>
+</head>
+<body>
+    
+
+    <script type="module">
+        import { TerminalKit } from '../terminal-kit/index.js';
+
+        TerminalKit.init({
+    // Enable/disable features
+    terminal: true,
+    musicPlayer: true,
+    taskbar: true,
+    matrixRain: true,
+
+    // Terminal options
+    terminalOptions: {
+        x: 100,           // Initial X position
+        y: 80,            // Initial Y position
+        width: 700,       // Window width
+        height: 450,      // Window height
+        autoShow: true    // Show on load
+    },
+
+    // Music player options
+    musicPlayerOptions: {
+        x: 150,           // Initial X position
+        y: 150,           // Initial Y position
+        autoShow: false   // Hidden by default
+    },
+
+    // Matrix rain options
+    matrixOptions: {
+        containerId: 'matrixRain',  // Container element ID
+        autoStart: true             // Start automatically
+    },
+
+    // Custom playlist
+    playlist: [
+        { title: "Song 1", src: "/mp3/song1.mp3" },
+        { title: "Song 2", src: "/mp3/song2.mp3" }
+    ]
+});
+    </script>
+</body>
+</html>
